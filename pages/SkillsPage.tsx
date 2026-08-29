@@ -8,11 +8,13 @@ const SkillsPage: React.FC = () => {
   return (
     <div>
       <Section title="Skills">
-        <div className="space-y-6">
+        <div className="grid gap-5 md:grid-cols-3">
           {skills.map((category, index) => (
-            <div key={index} className="bg-slate-50 p-4 rounded-lg border border-slate-200">
-              <h4 className="text-lg font-semibold text-slate-700 mb-3">{category.title}</h4>
-              <div className="flex flex-wrap gap-3">
+            <div key={index} className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <div className="mb-5">
+                <h4 className="text-lg font-black text-slate-800">{category.title}</h4>
+              </div>
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, sIndex) => (
                   <SkillBadge key={sIndex} skill={skill} />
                 ))}

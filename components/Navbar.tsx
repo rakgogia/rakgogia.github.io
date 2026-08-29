@@ -10,17 +10,18 @@ const navItems = ['Home', 'Experience', 'Education', 'Skills'];
 
 const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
   return (
-    <nav className="bg-white rounded-t-2xl shadow-md sticky top-0 z-10 mb-[-1px]">
-      <div className="container mx-auto max-w-4xl px-8">
-        <div className="flex justify-center space-x-4 sm:space-x-8">
+    <nav className="sticky top-2 z-20 rounded-2xl border border-white/10 bg-slate-950/70 p-1 shadow-xl shadow-black/20 backdrop-blur-xl sm:top-4 sm:rounded-full sm:p-1.5">
+      <div className="flex items-center justify-between gap-1">
+        <span className="hidden pl-4 text-xs font-bold uppercase tracking-[0.24em] text-slate-500 sm:block">Portfolio</span>
+        <div className="grid flex-1 grid-cols-4 gap-0.5 sm:flex sm:flex-none sm:gap-1">
           {navItems.map((item) => (
             <button
               key={item}
               onClick={() => onNavigate(item)}
-              className={`py-4 px-2 text-md font-medium transition-colors duration-300 border-b-4
+              className={`rounded-xl px-0.5 py-2.5 text-[9px] font-bold transition-all duration-300 sm:rounded-full sm:px-5 sm:text-sm
                 ${currentPage === item 
-                  ? 'border-blue-600 text-blue-600' 
-                  : 'border-transparent text-slate-500 hover:text-blue-600 hover:border-blue-300'
+                  ? 'bg-cyan-300 text-slate-950 shadow-lg shadow-cyan-400/20' 
+                  : 'text-slate-400 hover:bg-white/5 hover:text-white'
                 }`}
               aria-current={currentPage === item ? 'page' : undefined}
             >

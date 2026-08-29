@@ -30,7 +30,7 @@ export const MicrosoftLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) =>
 
 export const UMichLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
   <img
-    src="/umich_logo.webp"
+    src="/umich_logo.png"
     alt="UMich Logo"
     {...props}
   />
@@ -38,7 +38,7 @@ export const UMichLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (p
 
 export const ProQuestLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
   <img
-    src="/proquest_logo.jpeg"
+    src="/proquest_logo.png"
     alt="ProQuest Logo"
     {...props}
   />
@@ -46,7 +46,7 @@ export const ProQuestLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> =
 
 export const BoALogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
   <img
-    src="/bofa.webp"
+    src="/bofa.png"
     alt="BofA Logo"
     {...props}
   />
@@ -54,7 +54,7 @@ export const BoALogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (pro
 
 export const ShopeeLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
   <img
-    src="/shopee_logo.webp"
+    src="/shopee_logo.png"
     alt="Shopee Logo"
     {...props}
   />
@@ -62,7 +62,7 @@ export const ShopeeLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (
 
 export const InfosysLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
   <img
-    src="/infosys_logo.webp"
+    src="/infosys_logo.png"
     alt="Infosys Logo"
     {...props}
   />

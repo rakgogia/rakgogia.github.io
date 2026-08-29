@@ -8,7 +8,7 @@ const ExperiencePage: React.FC = () => {
   return (
     <div>
       <Section title="Work Experience">
-        <div className="space-y-8">
+        <div className="space-y-5">
           {workExperience.map((exp, index) => (
             <ExperienceCard key={index} experience={exp} />
           ))}
@@ -16,7 +16,7 @@ const ExperiencePage: React.FC = () => {
       </Section>
 
       <Section title="Research Experience">
-        <div className="space-y-8">
+        <div className="space-y-5">
           {researchExperience.map((exp, index) => (
             <ExperienceCard key={index} experience={exp} />
           ))}
@@ -24,7 +24,7 @@ const ExperiencePage: React.FC = () => {
       </Section>
       
       <Section title="Internships">
-        <div className="space-y-8">
+        <div className="space-y-5">
           {internships.map((exp, index) => (
             <ExperienceCard key={index} experience={exp} />
           ))}
