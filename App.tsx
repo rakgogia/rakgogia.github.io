@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { name, contactInfo } from './data';
-import { MailIcon, PhoneIcon, LinkedInIcon } from './components/Icons';
+import { GitHubIcon, MailIcon, PhoneIcon, LinkedInIcon } from './components/Icons';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import ExperiencePage from './pages/ExperiencePage';
@@ -45,7 +45,7 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-2 text-xs text-slate-300 sm:flex sm:flex-wrap sm:text-sm">
+          <div className="grid grid-cols-4 gap-2 text-xs text-slate-300 sm:flex sm:flex-wrap sm:text-sm">
             <a href={`mailto:${contactInfo.email}`} className="contact-pill">
               <MailIcon className="h-4 w-4 text-cyan-300" />
               <span>Email</span>
@@ -57,6 +57,10 @@ const App: React.FC = () => {
             <a href={`https://${contactInfo.linkedin}`} target="_blank" rel="noopener noreferrer" className="contact-pill">
               <LinkedInIcon className="h-4 w-4 text-cyan-300" />
               <span>LinkedIn</span>
+            </a>
+            <a href={`https://${contactInfo.github}`} target="_blank" rel="noopener noreferrer" className="contact-pill">
+              <GitHubIcon className="h-4 w-4 text-cyan-300" />
+              <span>GitHub</span>
             </a>
           </div>
         </header>

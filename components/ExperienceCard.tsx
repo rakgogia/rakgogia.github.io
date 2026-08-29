@@ -33,12 +33,12 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
           <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start sm:gap-3">
             <div className="min-w-0">
               <h3 className="text-lg font-black leading-tight text-slate-900 sm:text-xl">{experience.company}</h3>
+              <p className="mt-0.5 text-sm font-bold leading-5 text-blue-700">{experience.role}</p>
             </div>
             <p className="w-fit whitespace-nowrap rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-bold text-slate-500 sm:px-3 sm:text-xs">{experience.duration}</p>
           </div>
         </div>
       </div>
-      <p className="mt-3 text-sm font-bold leading-5 text-blue-700 sm:ml-[4.75rem]">{experience.role}</p>
       <ul className="mt-4 space-y-3 text-[13px] leading-5 text-slate-600 sm:ml-[4.75rem] sm:text-sm sm:leading-6">
         {experience.description.map((item, index) => (
           <li key={index} className="flex gap-2.5">

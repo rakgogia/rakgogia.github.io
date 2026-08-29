@@ -7,6 +7,7 @@ export const contactInfo: ContactInfo = {
   email: 'rakgogia@umich.edu',
   phone: '(734) 882-9783',
   linkedin: 'linkedin.com/in/rakshitgogia',
+  github: 'github.com/rakgogia',
 };
 
 export const summary = 'Software Engineer with expertise in large-scale search and LLM-powered chat systems. Lead contributor to Microsoft Copilot and Microsoft Search, with expertise in Gen AI, Machine Learning, and .NET development.';

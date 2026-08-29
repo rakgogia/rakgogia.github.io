@@ -20,6 +20,9 @@ const HomePage: React.FC = () => {
           <a href={`https://${contactInfo.linkedin}`} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-700 transition hover:-translate-y-0.5 hover:border-cyan-400 hover:text-cyan-700">
             View LinkedIn ↗
           </a>
+          <a href={`https://${contactInfo.github}`} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-700 transition hover:-translate-y-0.5 hover:border-cyan-400 hover:text-cyan-700">
+            View GitHub ↗
+          </a>
         </div>
       </div>
 
