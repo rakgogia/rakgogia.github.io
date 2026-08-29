@@ -32,7 +32,6 @@ export const UMichLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (p
   <img
     src="/umich_logo.webp"
     alt="UMich Logo"
-    style={{ height: '24px', width: 'auto' }}
     {...props}
   />
 );
@@ -41,7 +40,6 @@ export const ProQuestLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> =
   <img
     src="/proquest_logo.jpeg"
     alt="ProQuest Logo"
-    style={{ height: '24px', width: 'auto' }}
     {...props}
   />
 );
@@ -50,7 +48,6 @@ export const BoALogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (pro
   <img
     src="/bofa.webp"
     alt="BofA Logo"
-    style={{ height: '24px', width: 'auto' }}
     {...props}
   />
 );
@@ -59,7 +56,6 @@ export const ShopeeLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (
   <img
     src="/shopee_logo.webp"
     alt="Shopee Logo"
-    style={{ height: '24px', width: 'auto' }}
     {...props}
   />
 );
@@ -68,7 +64,6 @@ export const InfosysLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = 
   <img
     src="/infosys_logo.webp"
     alt="Infosys Logo"
-    style={{ height: '24px', width: 'auto' }}
     {...props}
   />
 );

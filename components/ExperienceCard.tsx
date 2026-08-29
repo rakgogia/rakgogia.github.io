@@ -23,8 +23,8 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
     <div className="flex gap-4 items-start p-4 rounded-lg transition-colors duration-300 hover:bg-slate-50">
       <div className="flex-shrink-0 w-12 h-12 mt-1">
         {LogoComponent && (
-            <div className="w-full h-full bg-white rounded-lg flex items-center justify-center shadow-sm p-1.5">
-                <LogoComponent className="w-full h-auto" />
+          <div className={`w-full h-full bg-white rounded-lg flex items-center justify-center shadow-sm overflow-hidden ${experience.logo === 'microsoft' ? 'p-1.5' : 'p-0'}`}>
+            <LogoComponent className="w-full h-full object-contain" />
             </div>
         )}
       </div>
