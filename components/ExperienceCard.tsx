@@ -42,7 +42,9 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
       <ul className="mt-4 space-y-3 text-[13px] leading-5 text-slate-600 sm:ml-[4.75rem] sm:text-sm sm:leading-6">
         {experience.description.map((item, index) => (
           <li key={index} className="flex gap-2.5">
-            <span className="mt-[0.45rem] h-1.5 w-1.5 flex-none rounded-full bg-cyan-500" />
+            <span className="flex h-5 flex-none items-center sm:h-6" aria-hidden="true">
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
+            </span>
             <span className="min-w-0">{item}</span>
           </li>
         ))}
