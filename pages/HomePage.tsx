@@ -5,7 +5,7 @@ const ProfilePhoto: React.FC = () => {
     return (
         <div className="w-full max-w-sm mx-auto md:max-w-xs lg:max-w-sm rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
             <img
-                src="https://storage.googleapis.com/aai-web-samples/rakshit-gogia-profile.jpg"
+            src="/ProfilePhoto.jpg"
                 alt="Rakshit Gogia in Yosemite"
                 className="w-full h-full object-cover"
             />

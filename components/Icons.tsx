@@ -28,37 +28,45 @@ export const MicrosoftLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) =>
   </svg>
 );
 
-export const UMichLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 75" {...props}>
-    <path fill="#00274C" d="M0 0h100v75H0z"/>
-    <path fill="#FFCB05" d="M12 12v51h18V38.11L50 63l20-24.89V63h18V12H71.5L50 39.5 28.5 12H12z"/>
-  </svg>
+export const UMichLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
+  <img
+    src="/umich_logo.webp"
+    alt="UMich Logo"
+    style={{ height: '24px', width: 'auto' }}
+    {...props}
+  />
 );
 
-export const ProQuestLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg viewBox="0 0 140 24" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <text x="0" y="18" fontFamily="system-ui, sans-serif" fontSize="20" fontWeight="bold" fill="#003f87">ProQuest</text>
-  </svg>
+export const ProQuestLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
+  <img
+    src="/proquest_logo.jpeg"
+    alt="ProQuest Logo"
+    style={{ height: '24px', width: 'auto' }}
+    {...props}
+  />
 );
 
-export const BoALogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-        <path d="M2 7H22V9H2V7Z" fill="#E21D34"/>
-        <path d="M2 11H22V13H2V11Z" fill="#004A99"/>
-        <path d="M2 15H22V17H2V15Z" fill="#E21D34"/>
-    </svg>
+export const BoALogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
+  <img
+    src="/bofa.webp"
+    alt="BofA Logo"
+    style={{ height: '24px', width: 'auto' }}
+    {...props}
+  />
 );
 
-export const ShopeeLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
-    <path fill="#F96F2E" d="M21.5,8H17V6a5,5,0,0,0-10,0V8H2.5A.5.5,0,0,0,2,8.5v12A.5.5,0,0,0,2.5,21h19a.5.5,0,0,0,.5-.5v-12A.5.5,0,0,0,21.5,8ZM9,6a3,3,0,0,1,6,0V8H9Z"/>
-    <path fill="#fff" d="M14.5,13.5a1,1,0,0,1-1,1h-4a1,1,0,0,1,0-2h3a1,1,0,0,0,0-2h-2a1,1,0,0,1,0-2h4a1,1,0,0,1,0,2h-3a1,1,0,0,0,0,2h2A1,1,0,0,1,14.5,13.5Z"/>
-  </svg>
+export const ShopeeLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
+  <img
+    src="/shopee_logo.webp"
+    alt="Shopee Logo"
+    style={{ height: '24px', width: 'auto' }}
+    {...props}
+  />
 );
 
 export const InfosysLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
   <img
-    src="../public/infosys-logo.png"
+    src="/infosys_logo.webp"
     alt="Infosys Logo"
     style={{ height: '24px', width: 'auto' }}
     {...props}
