@@ -13,7 +13,7 @@ export const summary = 'Software Engineer with expertise in large-scale search a
 
 export const workExperience: Experience[] = [
   {
-    role: 'Software Engineer II – Microsoft Search, Assistant, and Intelligence (MSAI)',
+    role: 'Software Engineer II',
     company: 'Microsoft',
     duration: 'Jul 2021 – Present',
     description: [
@@ -54,21 +54,21 @@ export const researchExperience: Experience[] = [
 
 export const internships: Experience[] = [
   {
-    role: 'AI Chatbot Development Intern',
+    role: 'Software Engineering Intern',
     company: 'Bank of America',
     duration: 'Summer 2020',
     description: ['Built AI chatbot for Global Markets risk reporting (NLP, Flask + ReactJS).'],
     logo: 'boa',
   },
   {
-    role: 'Product Recommendation System Intern',
+    role: 'Software Engineering Intern (Machine Learning)',
     company: 'Shopee',
     duration: 'Summer 2020',
     description: ['Developed product recommendation evaluation system; deployed FP-Growth algorithm for ad recommendations using Spark.'],
     logo: 'shopee',
   },
   {
-    role: 'Cybersecurity Anomaly Detection Intern',
+    role: 'Software Engineering Intern (Machine Learning)',
     company: 'Infosys',
     duration: 'Summer 2019',
     description: ['Evaluated various anomaly detection techniques; Integrated HTM anomaly detection into cybersecurity platform using PySpark.'],

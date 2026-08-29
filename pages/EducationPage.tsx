@@ -14,8 +14,7 @@ const EducationPage: React.FC = () => {
             </div>
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-100">Alma mater</p>
-                <h3 className="mt-2 text-2xl font-black sm:text-3xl">{education.institution}</h3>
+                <h3 className="text-2xl font-black sm:text-3xl">{education.institution}</h3>
                 <p className="mt-2 text-lg font-medium text-blue-50">{education.degree}</p>
               </div>
               <p className="rounded-full bg-white/15 px-4 py-2 text-sm font-bold backdrop-blur">{education.duration}</p>
