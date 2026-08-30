@@ -39,8 +39,14 @@ const App: React.FC = () => {
       <main className="relative z-10 mx-auto max-w-6xl px-3 py-4 sm:px-6 sm:py-6 md:py-10 lg:px-8">
         <header className="mb-4 flex flex-col gap-4 sm:mb-6 sm:gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-center gap-3 sm:gap-4">
-            <div className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-gradient-to-br from-cyan-300 to-blue-500 text-sm font-black text-slate-950 shadow-lg shadow-cyan-500/20 sm:h-12 sm:w-12 sm:rounded-2xl sm:text-lg">
-              RG
+            <div className="h-10 w-10 flex-none overflow-hidden rounded-xl border-2 border-cyan-300/70 shadow-lg shadow-cyan-500/20 sm:h-12 sm:w-12 sm:rounded-2xl">
+              <img
+                src="/HeaderPhoto.jpg"
+                alt="Rakshit Gogia overlooking the Seattle skyline"
+                width="48"
+                height="48"
+                className="h-full w-full scale-[1.75] object-cover object-[50%_48%]"
+              />
             </div>
             <div>
               <h1 className="text-base font-bold tracking-[0.08em] text-white sm:text-2xl sm:tracking-[0.16em]">{name}</h1>
