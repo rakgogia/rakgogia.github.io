@@ -11,9 +11,11 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "flag-icons": "^7.5.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "us-state-flags": "^1.0.7"
+    "us-state-flags": "^1.0.7",
+    "world-countries": "^5.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

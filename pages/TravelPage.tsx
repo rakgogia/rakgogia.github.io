@@ -1,12 +1,16 @@
 import React from 'react';
+import 'flag-icons/css/flag-icons.min.css';
 import { USStateFlags } from 'us-state-flags';
 import Section from '../components/Section';
-import { countriesLivedIn, travelMapEmbedUrl, usStatesLivedIn, usStatesVisited, visitedCountries } from '../data';
+import { travelMapEmbedUrl } from '../data';
+import { useTravelMapData } from '../hooks/useTravelMapData';
 
-const regions = ['Asia', 'Europe', 'North America', 'Oceania'] as const;
+const regions = ['Asia', 'Europe', 'North America', 'South America', 'Africa', 'Oceania', 'Antarctic', 'Other'] as const;
 const stateRegions = ['Northeast', 'Midwest', 'South', 'West'] as const;
 
 const TravelPage: React.FC = () => {
+  const { countriesLivedIn, visitedCountries, usStatesLivedIn, usStatesVisited } = useTravelMapData();
+
   return (
     <div>
       <Section title="My Journey Around the World">
@@ -31,7 +35,11 @@ const TravelPage: React.FC = () => {
           <div className="grid gap-3 sm:grid-cols-3">
             {countriesLivedIn.map((country) => (
               <div key={country.name} className="flex min-h-20 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-md">
-                <span className="text-3xl" aria-hidden="true">{country.flag}</span>
+                {country.code ? (
+                  <span className={`fi fi-${country.code.toLowerCase()} flex-none rounded-sm text-3xl shadow-sm`} role="img" aria-label={`${country.name} flag`} />
+                ) : (
+                  <span className="text-3xl" aria-hidden="true">{country.flag}</span>
+                )}
                 <span className="text-sm font-bold leading-tight text-slate-800">{country.name}</span>
               </div>
             ))}
@@ -48,6 +56,7 @@ const TravelPage: React.FC = () => {
         <div className="space-y-8">
           {regions.map((region) => {
             const countries = visitedCountries.filter((country) => country.region === region);
+            if (!countries.length) return null;
 
             return (
               <section key={region}>
@@ -59,7 +68,11 @@ const TravelPage: React.FC = () => {
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
                   {countries.map((country) => (
                     <div key={country.name} className="flex min-h-20 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-md">
-                      <span className="text-3xl" aria-hidden="true">{country.flag}</span>
+                      {country.code ? (
+                        <span className={`fi fi-${country.code.toLowerCase()} flex-none rounded-sm text-3xl shadow-sm`} role="img" aria-label={`${country.name} flag`} />
+                      ) : (
+                        <span className="text-3xl" aria-hidden="true">{country.flag}</span>
+                      )}
                       <span className="text-sm font-bold leading-tight text-slate-800">{country.name}</span>
                     </div>
                   ))}
@@ -96,6 +109,7 @@ const TravelPage: React.FC = () => {
           <div className="space-y-8">
             {stateRegions.map((region) => {
               const states = usStatesVisited.filter((state) => state.region === region);
+              if (!states.length) return null;
 
               return (
                 <div key={region}>

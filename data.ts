@@ -14,6 +14,7 @@ export const summary = 'Software Engineer with expertise in large-scale search a
 
 export const travelMapUrl = 'https://maps.app.goo.gl/MxJC1NbA7TL7Bsz3A';
 export const travelMapEmbedUrl = 'https://www.google.com/maps/d/embed?mid=1cBddpnBndkQ_5VHqnL02dkazEC02ROo&ehbc=2E312F';
+export const travelMapKmlUrl = 'https://www.google.com/maps/d/kml?mid=1cBddpnBndkQ_5VHqnL02dkazEC02ROo&forcekml=1';
 
 export const visitedCountries = [
   { name: 'Australia', flag: '🇦🇺', region: 'Oceania' },
