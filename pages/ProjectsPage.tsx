@@ -55,7 +55,7 @@ const ProjectsPage: React.FC = () => {
               Improved search quality across several M365 products by enhancing query formulation and language understanding capabilities, enabling more relevant and useful search experiences at scale.
             </p>
 
-            <p className="mt-6 text-sm font-bold text-cyan-200 sm:text-base">I have improved the following products:</p>
+            <p className="mt-6 text-sm font-bold text-cyan-200 sm:text-base">I have contributed to the following products:</p>
             <div className="mt-3 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-5">
               {microsoftSearchProducts.map((product) => {
                 const Logo = productLogos[product.logo];
