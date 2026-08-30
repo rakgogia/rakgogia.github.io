@@ -64,20 +64,7 @@ const normalizeCountryRegion = (region: string, subregion: string): string => {
   return subregion === 'South America' ? 'South America' : 'North America';
 };
 
-const europeanUNDivisions: Record<string, string> = {};
-[
-  ['Eastern Europe', ['BY', 'BG', 'CZ', 'HU', 'PL', 'MD', 'RO', 'RU', 'SK', 'UA']],
-  ['Northern Europe', ['AX', 'DK', 'EE', 'FO', 'FI', 'GG', 'IS', 'IE', 'IM', 'JE', 'LV', 'LT', 'NO', 'SJ', 'SE', 'GB']],
-  ['Southern Europe', ['AL', 'AD', 'BA', 'HR', 'GI', 'GR', 'VA', 'IT', 'MT', 'ME', 'MK', 'PT', 'SM', 'RS', 'SI', 'ES', 'XK']],
-  ['Western Europe', ['AT', 'BE', 'FR', 'DE', 'LI', 'LU', 'MC', 'NL', 'CH']],
-].forEach(([division, codes]) => {
-  (codes as string[]).forEach((code) => {
-    europeanUNDivisions[code] = division as string;
-  });
-});
-
-const normalizeCountryDivision = (region: string, subregion: string, code: string): string => {
-  if (region === 'Europe') return europeanUNDivisions[code] ?? (subregion || 'Other');
+const normalizeCountryDivision = (subregion: string): string => {
   if (subregion === 'North America') return 'Northern America';
   return subregion || 'Other';
 };
@@ -91,7 +78,7 @@ const toCountryLocation = (name: string): CountryLocation => {
     flag: country.flag,
     code: country.cca2,
     region: normalizeCountryRegion(country.region, country.subregion),
-    division: normalizeCountryDivision(country.region, country.subregion, country.cca2),
+    division: normalizeCountryDivision(country.subregion),
   };
 };
 

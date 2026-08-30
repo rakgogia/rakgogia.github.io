@@ -64,6 +64,7 @@ export const usStatesVisited = [
   { name: 'Michigan', abbreviation: 'MI', region: 'Midwest' },
   { name: 'Missouri', abbreviation: 'MO', region: 'Midwest' },
   { name: 'Montana', abbreviation: 'MT', region: 'West' },
+  { name: 'Nevada', abbreviation: 'NV', region: 'West' },
   { name: 'New Jersey', abbreviation: 'NJ', region: 'Northeast' },
   { name: 'New York', abbreviation: 'NY', region: 'Northeast' },
   { name: 'North Carolina', abbreviation: 'NC', region: 'South' },
