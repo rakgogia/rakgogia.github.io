@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import ExperiencePage from './pages/ExperiencePage';
 import EducationPage from './pages/EducationPage';
 import SkillsPage from './pages/SkillsPage';
+import TravelPage from './pages/TravelPage';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -20,6 +21,8 @@ const App: React.FC = () => {
         return <EducationPage />;
       case 'Skills':
         return <SkillsPage />;
+      case 'Travel':
+        return <TravelPage />;
       default:
         return <HomePage />;
     }

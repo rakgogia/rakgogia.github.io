@@ -12,6 +12,72 @@ export const contactInfo: ContactInfo = {
 
 export const summary = 'Software Engineer with expertise in large-scale search and LLM-powered chat systems. Lead contributor to Microsoft Copilot and Microsoft Search, with expertise in Gen AI, Machine Learning, and .NET development.';
 
+export const travelMapUrl = 'https://maps.app.goo.gl/MxJC1NbA7TL7Bsz3A';
+export const travelMapEmbedUrl = 'https://www.google.com/maps/d/embed?mid=1cBddpnBndkQ_5VHqnL02dkazEC02ROo&ehbc=2E312F';
+
+export const visitedCountries = [
+  { name: 'Australia', flag: '🇦🇺', region: 'Oceania' },
+  { name: 'Austria', flag: '🇦🇹', region: 'Europe' },
+  { name: 'Brunei', flag: '🇧🇳', region: 'Asia' },
+  { name: 'Cambodia', flag: '🇰🇭', region: 'Asia' },
+  { name: 'Canada', flag: '🇨🇦', region: 'North America' },
+  { name: 'China', flag: '🇨🇳', region: 'Asia' },
+  { name: 'Hungary', flag: '🇭🇺', region: 'Europe' },
+  { name: 'India', flag: '🇮🇳', region: 'Asia' },
+  { name: 'Indonesia', flag: '🇮🇩', region: 'Asia' },
+  { name: 'Italy', flag: '🇮🇹', region: 'Europe' },
+  { name: 'Japan', flag: '🇯🇵', region: 'Asia' },
+  { name: 'Malaysia', flag: '🇲🇾', region: 'Asia' },
+  { name: 'Singapore', flag: '🇸🇬', region: 'Asia' },
+  { name: 'South Korea', flag: '🇰🇷', region: 'Asia' },
+  { name: 'Taiwan', flag: '🇹🇼', region: 'Asia' },
+  { name: 'Thailand', flag: '🇹🇭', region: 'Asia' },
+  { name: 'United Arab Emirates', flag: '🇦🇪', region: 'Asia' },
+  { name: 'United States', flag: '🇺🇸', region: 'North America' },
+  { name: 'Vietnam', flag: '🇻🇳', region: 'Asia' },
+] as const;
+
+export const countriesLivedIn = [
+  { name: 'India', flag: '🇮🇳' },
+  { name: 'Singapore', flag: '🇸🇬' },
+  { name: 'United States', flag: '🇺🇸' },
+] as const;
+
+export const usStatesLivedIn = [
+  { name: 'Michigan', abbreviation: 'MI' },
+  { name: 'Washington', abbreviation: 'WA' },
+] as const;
+
+export const usStatesVisited = [
+  { name: 'Arizona', abbreviation: 'AZ', region: 'West' },
+  { name: 'Arkansas', abbreviation: 'AR', region: 'South' },
+  { name: 'California', abbreviation: 'CA', region: 'West' },
+  { name: 'Colorado', abbreviation: 'CO', region: 'West' },
+  { name: 'Georgia', abbreviation: 'GA', region: 'South' },
+  { name: 'Idaho', abbreviation: 'ID', region: 'West' },
+  { name: 'Illinois', abbreviation: 'IL', region: 'Midwest' },
+  { name: 'Indiana', abbreviation: 'IN', region: 'Midwest' },
+  { name: 'Kentucky', abbreviation: 'KY', region: 'South' },
+  { name: 'Maryland', abbreviation: 'MD', region: 'South' },
+  { name: 'Massachusetts', abbreviation: 'MA', region: 'Northeast' },
+  { name: 'Michigan', abbreviation: 'MI', region: 'Midwest' },
+  { name: 'Missouri', abbreviation: 'MO', region: 'Midwest' },
+  { name: 'Montana', abbreviation: 'MT', region: 'West' },
+  { name: 'New Jersey', abbreviation: 'NJ', region: 'Northeast' },
+  { name: 'New York', abbreviation: 'NY', region: 'Northeast' },
+  { name: 'North Carolina', abbreviation: 'NC', region: 'South' },
+  { name: 'Ohio', abbreviation: 'OH', region: 'Midwest' },
+  { name: 'Oregon', abbreviation: 'OR', region: 'West' },
+  { name: 'Pennsylvania', abbreviation: 'PA', region: 'Northeast' },
+  { name: 'Tennessee', abbreviation: 'TN', region: 'South' },
+  { name: 'Texas', abbreviation: 'TX', region: 'South' },
+  { name: 'Utah', abbreviation: 'UT', region: 'West' },
+  { name: 'Virginia', abbreviation: 'VA', region: 'South' },
+  { name: 'Washington', abbreviation: 'WA', region: 'West' },
+  { name: 'West Virginia', abbreviation: 'WV', region: 'South' },
+  { name: 'Wyoming', abbreviation: 'WY', region: 'West' },
+] as const;
+
 export const workExperience: Experience[] = [
   {
     role: 'Software Engineer II',

@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "us-state-flags": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
