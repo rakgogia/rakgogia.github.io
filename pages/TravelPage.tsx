@@ -141,7 +141,7 @@ const TravelPage: React.FC = () => {
                           <span className="h-px flex-1 bg-slate-200" />
                           <span className="text-xs font-bold text-slate-400">{group.countries.length}</span>
                         </div>
-                        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                           {group.countries.map((country) => (
                             <div key={country.name} className="flex min-h-20 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-md">
                               {country.code ? (
@@ -163,7 +163,7 @@ const TravelPage: React.FC = () => {
         </CollapsibleSection>
 
         <CollapsibleSection title="U.S. States I Have Lived In" count={usStatesLivedIn.length} className="mb-10">
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {sortByName(usStatesLivedIn).map((state) => (
               <div key={state.name} className="flex min-h-20 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-md">
                 <USStateFlags state={state.abbreviation} showFlag flagSize="sm" flagAlt={`${state.name} flag`} />
@@ -210,7 +210,7 @@ const TravelPage: React.FC = () => {
                           <span className="h-px flex-1 bg-slate-200" />
                           <span className="text-xs font-bold text-slate-400">{group.states.length}</span>
                         </div>
-                        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                           {group.states.map((state) => (
                             <div key={state.name} className="flex min-h-20 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-md">
                               <USStateFlags state={state.abbreviation} showFlag flagSize="sm" flagAlt={`${state.name} flag`} />
