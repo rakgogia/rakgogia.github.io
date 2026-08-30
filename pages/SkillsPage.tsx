@@ -8,7 +8,7 @@ const SkillsPage: React.FC = () => {
   return (
     <div>
       <Section title="Skills">
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5">
           {skills.map((category, index) => (
             <div key={index} className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-slate-50 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
               <div className="mb-5">
