@@ -80,6 +80,26 @@ export const usStatesVisited = [
   { name: 'Wyoming', abbreviation: 'WY', region: 'West' },
 ] as const;
 
+export const indianStatesLivedIn = [
+  { name: 'Delhi' },
+  { name: 'Karnataka' },
+] as const;
+
+export const indianStatesVisited = [
+  { name: 'Chandigarh' },
+  { name: 'Delhi' },
+  { name: 'Haryana' },
+  { name: 'Karnataka' },
+  { name: 'Kerala' },
+  { name: 'Maharashtra' },
+  { name: 'Puducherry' },
+  { name: 'Punjab' },
+  { name: 'Rajasthan' },
+  { name: 'Tamil Nadu' },
+  { name: 'Uttar Pradesh' },
+  { name: 'Uttarakhand' },
+] as const;
+
 export const workExperience: Experience[] = [
   {
     role: 'Software Engineer II',

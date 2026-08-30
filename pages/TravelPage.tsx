@@ -45,6 +45,7 @@ const stateDivisions = [
   'Mountain',
   'Pacific',
 ] as const;
+const indianStateZones = ['Northern', 'Central', 'Eastern', 'Western', 'Southern', 'North-Eastern', 'Other'] as const;
 
 const sortByName = <T extends { name: string },>(items: readonly T[]): T[] =>
   [...items].sort((first, second) => first.name.localeCompare(second.name));
@@ -72,8 +73,22 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({ title, count, c
   </details>
 );
 
+const IndianStateCard: React.FC<{ state: { name: string } }> = ({ state }) => (
+  <div className="flex min-h-20 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-md">
+    <span className="fi fi-in flex-none rounded-sm text-3xl shadow-sm" role="img" aria-label="India flag" />
+    <span className="text-sm font-bold leading-tight text-slate-800">{state.name}</span>
+  </div>
+);
+
 const TravelPage: React.FC = () => {
-  const { countriesLivedIn, visitedCountries, usStatesLivedIn, usStatesVisited } = useTravelMapData();
+  const {
+    countriesLivedIn,
+    visitedCountries,
+    usStatesLivedIn,
+    usStatesVisited,
+    indianStatesLivedIn,
+    indianStatesVisited,
+  } = useTravelMapData();
 
   return (
     <div>
@@ -173,7 +188,7 @@ const TravelPage: React.FC = () => {
           </div>
         </CollapsibleSection>
 
-        <CollapsibleSection title="U.S. States I Have Visited" count={usStatesVisited.length}>
+        <CollapsibleSection title="U.S. States I Have Visited" count={usStatesVisited.length} className="mb-10">
           <div className="space-y-8">
             {stateRegions.flatMap((region) => {
               const states = sortByName(usStatesVisited.filter((state) => state.region === region));
@@ -225,6 +240,44 @@ const TravelPage: React.FC = () => {
               );
             })}
           </div>
+        </CollapsibleSection>
+
+        <CollapsibleSection title="Indian States I Have Lived In" count={indianStatesLivedIn.length} className="mb-10">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {sortByName(indianStatesLivedIn).map((state) => (
+              <IndianStateCard key={state.name} state={state} />
+            ))}
+          </div>
+        </CollapsibleSection>
+
+        <CollapsibleSection title="Indian States I Have Visited" count={indianStatesVisited.length}>
+          {indianStatesVisited.length > 9 ? (
+            <div className="space-y-8">
+              {indianStateZones.map((zone) => {
+                const states = sortByName(indianStatesVisited.filter((state) => state.zone === zone));
+                if (!states.length) return null;
+
+                return (
+                  <section key={zone}>
+                    <div className="mb-3 flex items-center gap-3">
+                      <h4 className="text-sm font-black uppercase tracking-[0.16em] text-slate-500">{zone}</h4>
+                      <span className="h-px flex-1 bg-slate-200" />
+                      <span className="text-xs font-bold text-slate-400">{states.length}</span>
+                    </div>
+                    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                      {states.map((state) => <IndianStateCard key={state.name} state={state} />)}
+                    </div>
+                  </section>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {sortByName(indianStatesVisited).map((state) => (
+                <IndianStateCard key={state.name} state={state} />
+              ))}
+            </div>
+          )}
         </CollapsibleSection>
       </Section>
     </div>
