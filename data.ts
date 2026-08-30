@@ -107,7 +107,7 @@ export const workExperience: Experience[] = [
     duration: 'Jul 2021 – Present',
     description: [
       'Engineered LLM-powered query understanding for third-party data (including Salesforce, ServiceNow, Jira) in Copilot, improving trigger rates by 300% and enabling Copilot extensibility, a multi-billion-dollar business.',
-      'Architected and developed the capability to search for content in SharePoint folders/sites in M355 Copilot, resolving 40% of top customer pain points and boosting retention for key Fortune Global 500 customers.',
+      'Architected and developed the capability to search for content in SharePoint folders/sites in M365 Copilot, resolving 40% of top customer pain points and boosting retention for key Fortune Global 500 customers.',
       'Led live site readiness effort, establishing processes that cut incident resolution time from weeks to hours.',
       'Enhanced M365 file search ranker with new features, improving search relevance (NDCG@3) by >3%.',
       'Developed service for human-readable query understanding signals, improving search comprehension.',
@@ -195,8 +195,8 @@ export const highSchool: HighSchoolInfo = {
   location: 'Singapore',
   classYear: 'Class of 2014',
   honors: [
-    'Recipient of the SINDA Excellence Award',
-    'Recipient of the Singapore Ministry of Education Merit Scholarship',
+    'SINDA Excellence Award',
+    'Singapore Ministry of Education Merit Scholarship',
   ],
   societies: [
     'Hullett House Executive Committee',

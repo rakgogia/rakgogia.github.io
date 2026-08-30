@@ -31,14 +31,14 @@ const EducationPage: React.FC = () => {
             </div>
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Honors</p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {education.honors.map((honor) => <span key={honor} className="rounded-lg bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-800">{honor}</span>)}
+              <div className="mt-3 grid gap-2">
+                {education.honors.map((honor) => <span key={honor} className="justify-self-start rounded-lg bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-800">{honor}</span>)}
               </div>
             </div>
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Societies</p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {education.societies.map((society) => <span key={society} className="rounded-lg bg-blue-50 px-3 py-2 text-sm font-semibold text-blue-800">{society}</span>)}
+              <div className="mt-3 grid gap-2">
+                {education.societies.map((society) => <span key={society} className="justify-self-start rounded-lg bg-blue-50 px-3 py-2 text-sm font-semibold text-blue-800">{society}</span>)}
               </div>
             </div>
           </div>
@@ -60,14 +60,14 @@ const EducationPage: React.FC = () => {
           <div className="grid gap-6 p-7 sm:grid-cols-2 sm:p-9">
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Honors</p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {highSchool.honors.map((honor) => <span key={honor} className="rounded-lg bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-800">{honor}</span>)}
+              <div className="mt-3 grid gap-2">
+                {highSchool.honors.map((honor) => <span key={honor} className="justify-self-start rounded-lg bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-800">{honor}</span>)}
               </div>
             </div>
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Societies</p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {highSchool.societies.map((society) => <span key={society} className="rounded-lg bg-emerald-50 px-3 py-2 text-sm font-semibold text-emerald-800">{society}</span>)}
+              <div className="mt-3 grid gap-2">
+                {highSchool.societies.map((society) => <span key={society} className="justify-self-start rounded-lg bg-emerald-50 px-3 py-2 text-sm font-semibold text-emerald-800">{society}</span>)}
               </div>
             </div>
           </div>
