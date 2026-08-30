@@ -23,7 +23,7 @@ const EducationPage: React.FC = () => {
           <div className="grid gap-6 p-7 sm:grid-cols-[0.7fr_1.3fr] sm:p-9">
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Academic record</p>
-              <p className="mt-2 text-2xl font-black text-slate-900">{education.gpa}</p>
+              <p className="mt-2 whitespace-pre-line text-2xl font-black text-slate-900">{education.gpa}</p>
             </div>
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Honors &amp; societies</p>

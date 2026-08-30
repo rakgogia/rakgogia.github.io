@@ -158,7 +158,7 @@ export const education: EducationInfo = {
   institution: 'University of Michigan, Ann Arbor',
   degree: 'B.S. Computer Science, Minor in Business',
   duration: 'Aug 2017 – May 2021',
-  gpa: '3.84/4.00 (Summa Cum Laude)',
+  gpa: '3.84/4.00\nSumma Cum Laude',
   honors: ['Angell Scholar', "Dean's List", 'HKN Honor Society', 'President of Singapore Students Association'],
 };
 
