@@ -14,12 +14,14 @@ export interface CountryLocation {
   flag: string;
   code: string;
   region: string;
+  division: string;
 }
 
 export interface StateLocation {
   name: string;
   abbreviation: string;
   region?: string;
+  division?: string;
 }
 
 interface TravelMapData {
@@ -39,6 +41,18 @@ const stateRegions: Record<string, string> = {
   WI: 'Midwest', WY: 'West', DC: 'South',
 };
 
+const stateDivisions: Record<string, string> = {
+  CT: 'New England', ME: 'New England', MA: 'New England', NH: 'New England', RI: 'New England', VT: 'New England',
+  NJ: 'Mid-Atlantic', NY: 'Mid-Atlantic', PA: 'Mid-Atlantic',
+  IL: 'East North Central', IN: 'East North Central', MI: 'East North Central', OH: 'East North Central', WI: 'East North Central',
+  IA: 'West North Central', KS: 'West North Central', MN: 'West North Central', MO: 'West North Central', NE: 'West North Central', ND: 'West North Central', SD: 'West North Central',
+  DE: 'South Atlantic', DC: 'South Atlantic', FL: 'South Atlantic', GA: 'South Atlantic', MD: 'South Atlantic', NC: 'South Atlantic', SC: 'South Atlantic', VA: 'South Atlantic', WV: 'South Atlantic',
+  AL: 'East South Central', KY: 'East South Central', MS: 'East South Central', TN: 'East South Central',
+  AR: 'West South Central', LA: 'West South Central', OK: 'West South Central', TX: 'West South Central',
+  AZ: 'Mountain', CO: 'Mountain', ID: 'Mountain', MT: 'Mountain', NV: 'Mountain', NM: 'Mountain', UT: 'Mountain', WY: 'Mountain',
+  AK: 'Pacific', CA: 'Pacific', HI: 'Pacific', OR: 'Pacific', WA: 'Pacific',
+};
+
 const countryByName = new Map<string, (typeof worldCountries)[number]>();
 worldCountries.forEach((country) => {
   countryByName.set(country.name.common.toLowerCase(), country);
@@ -50,15 +64,34 @@ const normalizeCountryRegion = (region: string, subregion: string): string => {
   return subregion === 'South America' ? 'South America' : 'North America';
 };
 
+const europeanUNDivisions: Record<string, string> = {};
+[
+  ['Eastern Europe', ['BY', 'BG', 'CZ', 'HU', 'PL', 'MD', 'RO', 'RU', 'SK', 'UA']],
+  ['Northern Europe', ['AX', 'DK', 'EE', 'FO', 'FI', 'GG', 'IS', 'IE', 'IM', 'JE', 'LV', 'LT', 'NO', 'SJ', 'SE', 'GB']],
+  ['Southern Europe', ['AL', 'AD', 'BA', 'HR', 'GI', 'GR', 'VA', 'IT', 'MT', 'ME', 'MK', 'PT', 'SM', 'RS', 'SI', 'ES', 'XK']],
+  ['Western Europe', ['AT', 'BE', 'FR', 'DE', 'LI', 'LU', 'MC', 'NL', 'CH']],
+].forEach(([division, codes]) => {
+  (codes as string[]).forEach((code) => {
+    europeanUNDivisions[code] = division as string;
+  });
+});
+
+const normalizeCountryDivision = (region: string, subregion: string, code: string): string => {
+  if (region === 'Europe') return europeanUNDivisions[code] ?? (subregion || 'Other');
+  if (subregion === 'North America') return 'Northern America';
+  return subregion || 'Other';
+};
+
 const toCountryLocation = (name: string): CountryLocation => {
   const country = countryByName.get(name.toLowerCase());
-  if (!country) return { name, flag: '🌍', code: '', region: 'Other' };
+  if (!country) return { name, flag: '🌍', code: '', region: 'Other', division: 'Other' };
 
   return {
     name,
     flag: country.flag,
     code: country.cca2,
     region: normalizeCountryRegion(country.region, country.subregion),
+    division: normalizeCountryDivision(country.region, country.subregion, country.cca2),
   };
 };
 
@@ -69,7 +102,10 @@ const toStateLocation = (name: string, includeRegion: boolean): StateLocation | 
   return {
     name: state.name,
     abbreviation: state.abbreviation,
-    ...(includeRegion ? { region: stateRegions[state.abbreviation] ?? 'Other' } : {}),
+    ...(includeRegion ? {
+      region: stateRegions[state.abbreviation] ?? 'Other',
+      division: stateDivisions[state.abbreviation] ?? 'Other',
+    } : {}),
   };
 };
 
@@ -95,7 +131,9 @@ const fallbackData: TravelMapData = {
   countriesLivedIn: fallbackCountriesLivedIn.map((country) => toCountryLocation(country.name)),
   visitedCountries: fallbackVisitedCountries.map((country) => toCountryLocation(country.name)),
   usStatesLivedIn: [...fallbackUsStatesLivedIn],
-  usStatesVisited: [...fallbackUsStatesVisited],
+  usStatesVisited: fallbackUsStatesVisited
+    .map((state) => toStateLocation(state.name, true))
+    .filter((state): state is StateLocation => Boolean(state)),
 };
 
 export const useTravelMapData = (): TravelMapData => {
