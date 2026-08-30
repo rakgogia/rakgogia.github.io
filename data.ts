@@ -93,6 +93,15 @@ export const workExperience: Experience[] = [
     ],
     logo: 'microsoft',
   },
+  {
+    role: 'Infanteer',
+    company: 'Singapore Armed Forces',
+    duration: 'May 2015 – Mar 2017',
+    description: [
+      'Served in an infantry regiment of the Singapore Armed Forces.',
+      'Completed field training in Singapore, Brunei, and Taiwan, executing challenging missions in adverse conditions.',
+    ],
+  },
 ];
 
 export const researchExperience: Experience[] = [
