@@ -19,6 +19,7 @@ export interface EducationInfo {
   degree: string;
   duration: string;
   gpa: string;
+  graduationHonor: string;
   honors: string[];
 }
 
