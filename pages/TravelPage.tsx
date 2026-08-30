@@ -25,8 +25,9 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({ title, count, c
       <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white/15 text-lg font-black backdrop-blur">
         {count}
       </span>
-      <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-white/10 text-sm transition-transform duration-200 group-open:rotate-180" aria-hidden="true">
-        ▼
+      <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-white/10 text-xl font-semibold" aria-hidden="true">
+        <span className="group-open:hidden">+</span>
+        <span className="hidden group-open:inline">−</span>
       </span>
     </summary>
     {children}
