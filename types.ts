@@ -21,6 +21,15 @@ export interface EducationInfo {
   gpa: string;
   graduationHonor: string;
   honors: string[];
+  societies: string[];
+}
+
+export interface HighSchoolInfo {
+  institution: string;
+  location: string;
+  classYear: string;
+  honors: string[];
+  societies: string[];
 }
 
 export interface SkillCategory {

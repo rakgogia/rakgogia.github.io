@@ -1,5 +1,5 @@
 
-import type { ContactInfo, Experience, EducationInfo, SkillCategory } from './types';
+import type { ContactInfo, Experience, EducationInfo, HighSchoolInfo, SkillCategory } from './types';
 
 export const name = 'RAKSHIT GOGIA';
 
@@ -180,7 +180,29 @@ export const education: EducationInfo = {
   duration: 'Aug 2017 – May 2021',
   gpa: '3.84/4.00',
   graduationHonor: 'Summa Cum Laude',
-  honors: ['Angell Scholar', "Dean's List", 'HKN Honor Society', 'President of Singapore Students Association'],
+  honors: ['Angell Scholar', "Dean's List", '3rd Place in Michigan Data Science Hackathon'],
+  societies: [
+    'Eta Kappa Nu (HKN) Honor Society',
+    'President of Singapore Students Association',
+    'Michigan FinTech Team',
+    'Michigan Data Science Team',
+    'Michigan Ballroom Dance Team',
+  ],
+};
+
+export const highSchool: HighSchoolInfo = {
+  institution: 'Raffles Institution',
+  location: 'Singapore',
+  classYear: 'Class of 2014',
+  honors: [
+    'Recipient of the SINDA Excellence Award',
+    'Recipient of the Singapore Ministry of Education Merit Scholarship',
+  ],
+  societies: [
+    'Hullett House Executive Committee',
+    'Peer Support Leader',
+    'Raffles Symphonic Band',
+  ],
 };
 
 export const skills: SkillCategory[] = [
