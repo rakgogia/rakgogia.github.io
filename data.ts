@@ -1,5 +1,5 @@
 
-import type { ContactInfo, Experience, EducationInfo, HighSchoolInfo, SkillCategory } from './types';
+import type { ContactInfo, Experience, EducationInfo, GitHubProject, HighSchoolInfo, MicrosoftProduct, PersonalProject, SkillCategory } from './types';
 
 export const name = 'RAKSHIT GOGIA';
 
@@ -11,6 +11,76 @@ export const contactInfo: ContactInfo = {
 };
 
 export const summary = 'Software Engineer with expertise in large-scale search and LLM-powered chat systems. Lead contributor to Microsoft Copilot and Microsoft Search, with expertise in Gen AI, Machine Learning, and .NET development.';
+
+export const microsoftSearchProducts: MicrosoftProduct[] = [
+  { name: 'Outlook', logo: 'outlook' },
+  { name: 'Teams', logo: 'teams' },
+  { name: 'SharePoint', logo: 'sharepoint' },
+  { name: 'Copilot', logo: 'copilot' },
+  { name: 'Copilot Search', logo: 'copilot-search' },
+];
+
+export const personalProjects: PersonalProject[] = [
+  {
+    title: 'MapReduce Server',
+    duration: 'Mar 2019',
+    description: [
+      'Developed a MapReduce server that executes distributed jobs across a cluster while ensuring fault tolerance.',
+      'Used multiprocessing, multithreading, and sockets to run mapping, grouping, and reducing jobs in parallel.',
+    ],
+    technologies: ['Python', 'Distributed Systems', 'Sockets'],
+  },
+  {
+    title: 'Michigan DataHack',
+    duration: 'Jan 2019',
+    description: [
+      'Analyzed sports performance tracking data and developed a model to predict the best position for a player.',
+      'Won third place as the only undergraduate team to receive a prize.',
+    ],
+    technologies: ['Machine Learning', 'Data Analysis', 'Python'],
+  },
+  {
+    title: 'Maker Faire Singapore',
+    duration: 'May – Jul 2017',
+    description: [
+      'Collaborated on a programmable laser engraver built from recycled instruments for Maker Faire Singapore, an annual science fair organized by Science Centre Singapore.',
+      'Built a working prototype with a laser diode mounted on two motors and controlled by an Arduino, capable of engraving complex drawings on materials of varying hardness.',
+      'Learned Arduino programming, circuit design, and end-to-end prototype development; the device drew strong interest from visitors.',
+    ],
+    technologies: ['Arduino', 'Circuit Design', 'Prototyping'],
+  },
+];
+
+export const githubProjects: GitHubProject[] = [
+  {
+    name: 'India Visa Bulletin Tracker',
+    description: 'Tracks employment-based visa filing and final action dates, compares monthly movement, and scrapes live data from the U.S. Department of State.',
+    language: 'JavaScript',
+    topics: ['React', 'Express', 'Cheerio', 'Cloud Run'],
+    url: 'https://github.com/rakgogia/visa-bulletin-tracker',
+  },
+  {
+    name: 'MCP Server',
+    description: 'A lightweight Python implementation exploring Model Context Protocol client and server communication.',
+    language: 'Python',
+    topics: ['MCP', 'Client–Server', 'AI'],
+    url: 'https://github.com/rakgogia/mcp-server',
+  },
+  {
+    name: 'AI Trip Planner',
+    description: 'An AI-powered trip planning experience that generates itineraries and restaurant recommendations with Gemini.',
+    language: 'TypeScript',
+    topics: ['React', 'Gemini', 'Google Cloud', 'GenAI'],
+    url: 'https://github.com/rakgogia/AI-trip-planner',
+  },
+  {
+    name: 'Agentic Wedding Planner',
+    description: 'An AI-assisted wedding planning application built as an interactive TypeScript experience with Gemini.',
+    language: 'TypeScript',
+    topics: ['React', 'Gemini', 'Google Cloud', 'GenAI', 'Agents'],
+    url: 'https://github.com/rakgogia/Agentic-Wedding-Planner',
+  },
+];
 
 export const travelMapUrl = 'https://maps.app.goo.gl/MxJC1NbA7TL7Bsz3A';
 export const travelMapEmbedUrl = 'https://www.google.com/maps/d/embed?mid=1cBddpnBndkQ_5VHqnL02dkazEC02ROo&ehbc=2E312F';
@@ -183,6 +253,7 @@ export const education: EducationInfo = {
   honors: ['Angell Scholar', "Dean's List", '3rd Place in Michigan Data Science Hackathon'],
   societies: [
     'Eta Kappa Nu (HKN) Honor Society',
+    'Michigan Community Scholars Program',
     'President of Singapore Students Association',
     'Michigan FinTech Team',
     'Michigan Data Science Team',

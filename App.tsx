@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import ExperiencePage from './pages/ExperiencePage';
 import EducationPage from './pages/EducationPage';
 import SkillsPage from './pages/SkillsPage';
+import ProjectsPage from './pages/ProjectsPage';
 import TravelPage from './pages/TravelPage';
 
 const App: React.FC = () => {
@@ -66,6 +67,7 @@ const App: React.FC = () => {
             <Route path="/experience" element={<ExperiencePage />} />
             <Route path="/education" element={<EducationPage />} />
             <Route path="/skills" element={<SkillsPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/travel" element={<TravelPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
