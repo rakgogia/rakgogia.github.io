@@ -3,7 +3,7 @@ import 'flag-icons/css/flag-icons.min.css';
 import { USStateFlags } from 'us-state-flags';
 import Section from '../components/Section';
 import { travelMapEmbedUrl } from '../data';
-import { useTravelMapData } from '../hooks/useTravelMapData';
+import { useTravelMapData, type CountryLocation } from '../hooks/useTravelMapData';
 
 const regions = ['Asia', 'Europe', 'North America', 'South America', 'Africa', 'Oceania', 'Antarctic', 'Other'] as const;
 const countryDivisions = [
@@ -51,14 +51,15 @@ const sortByName = <T extends { name: string },>(items: readonly T[]): T[] =>
   [...items].sort((first, second) => first.name.localeCompare(second.name));
 
 interface CollapsibleSectionProps {
+  id?: string;
   title: string;
   count: number;
   className?: string;
   children: React.ReactNode;
 }
 
-const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({ title, count, className = '', children }) => (
-  <details open className={`group ${className}`}>
+const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({ id, title, count, className = '', children }) => (
+  <details id={id} open className={`group scroll-mt-24 ${className}`}>
     <summary className="mb-6 flex cursor-pointer list-none items-center gap-3 rounded-2xl bg-gradient-to-r from-blue-700 to-cyan-600 px-5 py-4 text-white shadow-lg transition hover:brightness-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden sm:px-6">
       <h3 className="min-w-0 flex-1 text-xl font-black">{title}</h3>
       <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white/15 text-lg font-black backdrop-blur">
@@ -72,6 +73,29 @@ const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({ title, count, c
     {children}
   </details>
 );
+
+const CountryCard: React.FC<{ country: CountryLocation; targetId?: string }> = ({ country, targetId }) => {
+  const content = (
+    <>
+      {country.code ? (
+        <span className={`fi fi-${country.code.toLowerCase()} flex-none rounded-sm text-3xl shadow-sm`} role="img" aria-label={`${country.name} flag`} />
+      ) : (
+        <span className="text-3xl" aria-hidden="true">{country.flag}</span>
+      )}
+      <span className="text-sm font-bold leading-tight text-slate-800">{country.name}</span>
+      {targetId && <span className="ml-auto text-lg text-cyan-700" aria-hidden="true">↓</span>}
+    </>
+  );
+  const className = "flex min-h-20 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-md";
+
+  return targetId ? (
+    <a href={`#${targetId}`} className={className} aria-label={`View ${country.name} state details`}>
+      {content}
+    </a>
+  ) : (
+    <div className={className}>{content}</div>
+  );
+};
 
 const IndianStateCard: React.FC<{ state: { name: string } }> = ({ state }) => (
   <div className="flex min-h-20 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-md">
@@ -107,14 +131,11 @@ const TravelPage: React.FC = () => {
         <CollapsibleSection title="Countries I Have Lived In" count={countriesLivedIn.length} className="mb-10">
           <div className="grid gap-3 sm:grid-cols-3">
             {sortByName(countriesLivedIn).map((country) => (
-              <div key={country.name} className="flex min-h-20 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-md">
-                {country.code ? (
-                  <span className={`fi fi-${country.code.toLowerCase()} flex-none rounded-sm text-3xl shadow-sm`} role="img" aria-label={`${country.name} flag`} />
-                ) : (
-                  <span className="text-3xl" aria-hidden="true">{country.flag}</span>
-                )}
-                <span className="text-sm font-bold leading-tight text-slate-800">{country.name}</span>
-              </div>
+              <CountryCard
+                key={country.name}
+                country={country}
+                targetId={country.name === 'United States' ? 'us-states-lived-in' : country.name === 'India' ? 'indian-states-lived-in' : undefined}
+              />
             ))}
           </div>
         </CollapsibleSection>
@@ -158,14 +179,11 @@ const TravelPage: React.FC = () => {
                         </div>
                         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                           {group.countries.map((country) => (
-                            <div key={country.name} className="flex min-h-20 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-md">
-                              {country.code ? (
-                                <span className={`fi fi-${country.code.toLowerCase()} flex-none rounded-sm text-3xl shadow-sm`} role="img" aria-label={`${country.name} flag`} />
-                              ) : (
-                                <span className="text-3xl" aria-hidden="true">{country.flag}</span>
-                              )}
-                              <span className="text-sm font-bold leading-tight text-slate-800">{country.name}</span>
-                            </div>
+                            <CountryCard
+                              key={country.name}
+                              country={country}
+                              targetId={country.name === 'United States' ? 'us-states-visited' : country.name === 'India' ? 'indian-states-visited' : undefined}
+                            />
                           ))}
                         </div>
                       </div>
@@ -177,7 +195,7 @@ const TravelPage: React.FC = () => {
           </div>
         </CollapsibleSection>
 
-        <CollapsibleSection title="U.S. States I Have Lived In" count={usStatesLivedIn.length} className="mb-10">
+        <CollapsibleSection id="us-states-lived-in" title="U.S. States I Have Lived In" count={usStatesLivedIn.length} className="mb-10">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {sortByName(usStatesLivedIn).map((state) => (
               <div key={state.name} className="flex min-h-20 items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-md">
@@ -188,7 +206,7 @@ const TravelPage: React.FC = () => {
           </div>
         </CollapsibleSection>
 
-        <CollapsibleSection title="U.S. States I Have Visited" count={usStatesVisited.length} className="mb-10">
+        <CollapsibleSection id="us-states-visited" title="U.S. States I Have Visited" count={usStatesVisited.length} className="mb-10">
           <div className="space-y-8">
             {stateRegions.flatMap((region) => {
               const states = sortByName(usStatesVisited.filter((state) => state.region === region));
@@ -242,7 +260,7 @@ const TravelPage: React.FC = () => {
           </div>
         </CollapsibleSection>
 
-        <CollapsibleSection title="Indian States I Have Lived In" count={indianStatesLivedIn.length} className="mb-10">
+        <CollapsibleSection id="indian-states-lived-in" title="Indian States I Have Lived In" count={indianStatesLivedIn.length} className="mb-10">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {sortByName(indianStatesLivedIn).map((state) => (
               <IndianStateCard key={state.name} state={state} />
@@ -250,7 +268,7 @@ const TravelPage: React.FC = () => {
           </div>
         </CollapsibleSection>
 
-        <CollapsibleSection title="Indian States I Have Visited" count={indianStatesVisited.length}>
+        <CollapsibleSection id="indian-states-visited" title="Indian States I Have Visited" count={indianStatesVisited.length}>
           {indianStatesVisited.length > 9 ? (
             <div className="space-y-8">
               {indianStateZones.map((zone) => {
