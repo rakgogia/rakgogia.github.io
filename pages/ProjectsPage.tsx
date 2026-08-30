@@ -52,10 +52,11 @@ const ProjectsPage: React.FC = () => {
               Improving how people find information across Microsoft 365
             </h3>
             <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-300 sm:text-base sm:leading-7">
-              Improved search quality across Outlook, Teams, SharePoint, Copilot, and Copilot Search by enhancing query formulation and language understanding capabilities, enabling more relevant and useful search experiences at scale.
+              Improved search quality across several M365 products by enhancing query formulation and language understanding capabilities, enabling more relevant and useful search experiences at scale.
             </p>
 
-            <div className="mt-7 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-5">
+            <p className="mt-6 text-sm font-bold text-cyan-200 sm:text-base">I have improved the following products:</p>
+            <div className="mt-3 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-5">
               {microsoftSearchProducts.map((product) => {
                 const Logo = productLogos[product.logo];
                 return (
