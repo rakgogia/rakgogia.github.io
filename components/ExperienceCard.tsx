@@ -1,7 +1,7 @@
 
 import React from 'react';
 import type { Experience } from '../types';
-import { MicrosoftLogo, UMichLogo, ProQuestLogo, BoALogo, ShopeeLogo, InfosysLogo } from './Icons';
+import { MicrosoftLogo, UMichLogo, ProQuestLogo, BoALogo, ShopeeLogo, InfosysLogo, SingaporeArmyLogo } from './Icons';
 
 interface ExperienceCardProps {
   experience: Experience;
@@ -14,6 +14,7 @@ const companyLogos: Record<string, React.ElementType> = {
   boa: BoALogo,
   shopee: ShopeeLogo,
   infosys: InfosysLogo,
+  saf: SingaporeArmyLogo,
 };
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {

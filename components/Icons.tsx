@@ -73,3 +73,11 @@ export const InfosysLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = 
     {...props}
   />
 );
+
+export const SingaporeArmyLogo: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => (
+  <img
+    src="/singapore_army_logo.webp"
+    alt="Singapore Army crest"
+    {...props}
+  />
+);
