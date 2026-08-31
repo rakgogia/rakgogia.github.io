@@ -31,6 +31,15 @@ export const personalProjects: PersonalProject[] = [
     technologies: ['Python', 'Distributed Systems', 'Sockets'],
   },
   {
+    title: 'Michigan DataHack',
+    duration: 'Jan 2019',
+    description: [
+      'Analyzed sports performance tracking data and developed a model to predict the best position for a player.',
+      'Won third place as the only undergraduate team to receive a prize.',
+    ],
+    technologies: ['Machine Learning', 'Python'],
+  },
+  {
     title: 'Maker Faire Singapore',
     duration: 'May – Jul 2017',
     description: [
